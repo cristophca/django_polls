@@ -1,0 +1,13 @@
+---
+- hosts: servers
+  vars_files:
+    - vars.yml
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Instalar paquetes del sistema
+      apt: 
+        name: '{{ system_packages }}'
+        update_cache: yes
+ 
